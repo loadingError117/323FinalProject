@@ -1,0 +1,57 @@
+-- Origninal Grammar -- 
+<prog> -> program <identifier>; var <dec-list> begin <stat-list> end.
+<identifier> -> <letter>{<letter>|<digit>} note. This grammar is in EBNF
+<dec-list> -> <dec> : <type> ;
+<dec> -> <identifier> , <dec> | < identifier >
+<type> -> integer
+<stat-list> -> <stat> | <stat> <stat-list>
+<stat> -> <write> | <assign>
+<write> -> write( <str> < identifier > );
+<str> ->”value=”, | λ
+<assign> -> < identifier > = <expr>;
+<expr> -> <expr> + <term> | <expr> - <term> | <term>
+<term> -> <term> * <factor> | <term> / <factor>| <factor>
+<factor> -> < identifier > | <number> | ( <expr> )
+<number> -> <sign><digit>{ <digit> } note: the grammar is in EBNF
+<sign> -> + | - | λ
+<digit> -> 0|1|2|...|9
+<letter> -> p | q | r | s
+
+-- Simplified Grammar --
+S -> aA; bBcEd
+A -> Y { Y | P }    # note: This grammar is in EBNF
+B -> C : D ;
+C -> A , C | A
+D -> e
+E -> F | FE
+F -> G | I
+G -> f ( H A );
+H -> g , | λ
+I -> A = J;
+J -> J + K | J - K | K
+K -> K * L | K / L| L
+L -> A | M | ( J )
+M -> X P { P }      # note: the grammar is in EBNF
+X -> + | - | λ
+P -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+Y -> p | q | r | s
+
+
+  --Non-Terminal--		--Terminal--
+<prog>       = S	|	program   = a
+<identifier> = A	|	var 	    = b
+<dec-list>   = B	|	begin     = c
+<dec>	       = C 	|	end.	    = d
+<type>	     = D	|	integer   = e
+<stat-list>  = E	|	write	    = f
+<stat>	     = F	| ”value=”  = g
+<write>	     = G	|
+<str>	       = H  |
+<assign>     = I	|
+<expr>	     = J	|
+<term>	     = K	|
+<factor>     = L	|
+<number>     = M	|
+<sign>	     = X	|
+<digit>	     = P	|
+<letter>     = Y	|
