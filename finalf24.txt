@@ -1,13 +1,13 @@
-1. program s2024;
-2. var
-3. p1 , q2s , r , pp : integer ;
-4. begin
-5. p1 = 3 ;
-6. pp= 23 ;
-7. q2s = 4 ;
-8. r = 5 ;
-9. p1 = 2 * p1 + r * ( q2s + pp ) ;
-10. write( p1 ) ; // display p1
-11. pp = p1 * ( q2s + 2 * rc ) ;
-17. write( “value=”, pp ) ; //print the value of pp
-18. end.
+program s2024;
+var
+p1 , q2s , r , pp : integer ;
+begin
+p1 = 3 ;
+pp= 23 ;
+q2s = 4 ;
+r = 5 ;
+p1 = 2 * p1 + r * ( q2s + pp ) ;
+write( p1 ) ; // display p1
+pp = p1 * ( q2s + 2 * rc ) ;
+write( “value=”, pp ) ; //print the value of pp
+end.

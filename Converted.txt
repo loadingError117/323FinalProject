@@ -17,7 +17,7 @@
 <digit> -> 0|1|2|...|9
 <letter> -> p | q | r | s
 
--- Simplified Grammar --
+-- Converted Grammar --
 S -> aA; bBcEd
 A -> Y { Y | P }    # note: This grammar is in EBNF
 B -> C : D ;
